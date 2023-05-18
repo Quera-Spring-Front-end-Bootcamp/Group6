@@ -7,7 +7,11 @@ import Reset from "./pages/Reset/Reset";
 import { AppRouteProps } from "./types/types"; // update the import statement for AppRouteProps
 
 function App() {
-  const exampleElement = <div>Example component</div>; // define example element here
+  const exampleElement = (
+    <div style={{ fontFamily: 'Dana' }}>
+      Example component with Dana font
+    </div>
+  );
 
   return (
     <div>
@@ -17,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Forget />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="/example" element={<Route {...{ path: "/example", element: exampleElement }} />} /> // example route using the Route component
+        <Route path="/example" element={<Route {...{ path: "/example", element: exampleElement }} />} /> {/* example route using the Route component */}
       </Routes>
     </div>
   );
