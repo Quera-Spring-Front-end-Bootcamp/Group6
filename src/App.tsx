@@ -4,24 +4,16 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Forget from "./pages/Forget/Forget";
 import Reset from "./pages/Reset/Reset";
-import { AppRouteProps } from "./types/types"; // update the import statement for AppRouteProps
 
 function App() {
-  const exampleElement = (
-    <div style={{ fontFamily: 'Dana' }}>
-      Example component with Dana font
-    </div>
-  );
-
   return (
-    <div>
+    <div className="font-dana">
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Forget />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="/example" element={<Route {...{ path: "/example", element: exampleElement }} />} /> {/* example route using the Route component */}
       </Routes>
     </div>
   );
