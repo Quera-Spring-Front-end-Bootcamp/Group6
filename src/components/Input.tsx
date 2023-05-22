@@ -27,7 +27,7 @@ export const Input = ({ elementType, id, label, register }: InputData) => {
       }
 
       {elementType === 'checkbox' &&
-        <div className="flex"><input type="checkbox" className="ml-2" defaultChecked={rulesAgreed} onChange={handleChange} {...register} /><span>قوانین و مقررات را می‌پذیرم</span>
+        <div className="flex"><input type="checkbox" className="ml-2 text-red-600 bg-gray-100" defaultChecked={rulesAgreed} onChange={handleChange} {...register} /><span>{label}</span>
         </div>
       }
     </div>
