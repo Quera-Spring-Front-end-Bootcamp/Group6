@@ -1,20 +1,35 @@
+import { useState } from 'react'
+
 type InputData = {
   id: string
-  label: string
-  type: string
-  register: object
+  label?: string
+  elementType: string
+  register: object,
 }
 
-export const Input = ({ type, id, label, register }: InputData) => {
+export const Input = ({ elementType, id, label, register }: InputData) => {
+  const [rulesAgreed, setRulesAgreed] = useState(false)
+
+  const handleChange = () => {
+    setRulesAgreed(!rulesAgreed)
+  }
+
   return (
     <div className="flex flex-col mt-5">
-      {type !== 'checkbox' && <>
-        <label className="mb-2" htmlFor={id}>
-          {label}
-        </label>
-        <input className="border border-gray-400 rounded-md h-10 outline-none pr-1" type={type} id={id} {...register} /> </>}
+      {
+        elementType !== 'checkbox' &&
+        <>
+          <label className="mb-2 font-normal text-sm leading-snug text-right" htmlFor={id}>
+            {label}
+          </label>
+          <input className="border border-gray-400 rounded-md h-10 outline-none pr-1 font-normal" type={elementType} id={id} {...register} />
+        </>
+      }
 
-      {type === 'checkbox' && <div className="flex "><input type="checkbox" className="ml-2" /><span>قوانین و مقررات را می‌پذیرم</span></div>}
+      {elementType === 'checkbox' &&
+        <div className="flex"><input type="checkbox" className="ml-2" defaultChecked={rulesAgreed} onChange={handleChange} {...register} /><span>قوانین و مقررات را می‌پذیرم</span>
+        </div>
+      }
     </div>
   )
 }
