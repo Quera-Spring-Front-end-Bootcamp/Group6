@@ -1,3 +1,3 @@
 export const AuthCart = () => {
-  return <>AuthCart</>
+  return <div className='max-40'>AuthCart</div>
 }
