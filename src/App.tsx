@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Index from "./pages/Index/Index";
+import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Forget from "./pages/Forget/Forget";
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="font-dana">
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Forget />} />
