@@ -3,7 +3,7 @@ export default function AuthHeader() {
   const location = useLocation();
 
   return (
-    <div className="flex w-full justify-between items-center p-10">
+    <div className="flex w-full h-[100px] justify-between items-center p-10 z-[1] relative">
       <div className="flex items-center gap-2">
         <Link
           to={location.pathname === "/login" ? "/register" : "/login"}
