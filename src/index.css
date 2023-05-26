@@ -5,6 +5,7 @@
 @layer utilities {
   .font-dana {
     font-family: "Dana";
+    overflow: hidden;
   }
   .clip {
     clip-path: polygon(0 60%, 100% 30%, 100% 100%, 0 100%);
