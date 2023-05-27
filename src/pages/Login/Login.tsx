@@ -1,11 +1,8 @@
-import { Form } from "react-router-dom";
 import {
   AuthCart,
   AuthCartHeader,
 } from "../../components/AuthPagesComps/AuthCart";
 import AuthLayout from "../../layout/Auth/AuthLayout";
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 type Inputs = {
