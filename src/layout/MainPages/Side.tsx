@@ -11,7 +11,7 @@ export default function Side() {
       <div className="pb-5">
         <Title />
       </div>
-      {location.pathname !== "/profile" ? (
+      {!location.pathname.includes("profile") ? (
         <SideBar />
       ) : (
         <div>profile side bar</div>
