@@ -8,12 +8,12 @@ export const Button: React.FC<
 > = (props) => {
   return (
     <button
-      {...props}
       className={
         props.variant === "blue"
           ? "p-[10px] bg-[#208D8E] rounded-[6px] text-white font-[700] text-[14px]"
           : ""
       }
+      {...props}
     >
       {props.children}
     </button>
