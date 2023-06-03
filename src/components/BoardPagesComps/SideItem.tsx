@@ -1,12 +1,19 @@
+import { useState } from "react";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { Button } from "../Button";
+import Menu from "../Menu";
+import MenuSideItem from "./MenuSideItem";
+import useComponentVisible from "../../hooks/useComponentVisible";
 type SideItemProps = {
   title: string;
   color: string | undefined;
   selected: boolean;
 };
 export default function SideItem(props: SideItemProps) {
+  const { ref, isComponentVisible, setIsComponentVisible } =
+    useComponentVisible(false);
   return (
-    <div className="group flex items-center cursor-pointer">
+    <div ref={ref} className="group flex items-center cursor-pointer">
       <div
         className={`w-[20px] h-[20px] rounded-[4px] ml-2 ${
           props.color !== undefined && `bg-[${props.color}]`
@@ -20,9 +27,19 @@ export default function SideItem(props: SideItemProps) {
         <span className="font-[500] text-[16px] text-[#1E1E1E]">
           {props.title}
         </span>
-        <div className="[&>*]:stroke-[#323232] hidden group-hover:block ml-1  ">
+        <Button
+          onClick={() => setIsComponentVisible(!isComponentVisible)}
+          className={`[&>*]:stroke-[#323232] ${
+            !isComponentVisible && "hidden"
+          } group-hover:block ml-1  `}
+        >
           <BiDotsHorizontalRounded />
-        </div>
+          {isComponentVisible && (
+            <Menu>
+              <MenuSideItem />
+            </Menu>
+          )}
+        </Button>
       </div>
     </div>
   );
